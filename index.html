@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Think I'm กฤต?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 10%;
+        }
+        button {
+            font-size: 30px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #yes {
+            background-color: green;
+            color: white;
+        }
+        #no {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Do you think กฤต's handsome?</h1>
+    <button id="yes" onclick="handleYes()">Yes</button>
+    <button id="no" onclick="handleNo()">No</button>
+
+    <script>
+        const yesButton = document.getElementById('yes');
+
+        function handleYes() {
+            const newTab = window.open();
+            newTab.document.write(`
+                <h1 style="font-family: Arial, sans-serif; text-align: center; margin-top: 20%;">
+                    You're correct! กฤต's handsome.
+                </h1>
+            `);
+            newTab.document.title = "Correct!";
+        }
+
+        function handleNo() {
+            alert("Try again!");
+            yesButton.style.width = (parseInt(getComputedStyle(yesButton).width) + 35) + "px";
+            yesButton.style.height = (parseInt(getComputedStyle(yesButton).height) + 35) + "px";
+        }
+    </script>
+</body>
+</html>
